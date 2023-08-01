@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service Calculator{
+    rpc Add(Input) returns (ResponseMessage);
+    rpc Subtract(Input) returns (ResponseMessage);
+    rpc Multiply(Input) returns (ResponseMessage);
+    rpc Divide(Input) returns (ResponseMessage);
+}
+
+message ResponseMessage{
+    float result = 1;
+    bool zero = 2;
+    string message = 3;
+}
+
+message Input{
+    int32 a = 1;
+    int32 b = 2;
+}
